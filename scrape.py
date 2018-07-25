@@ -29,11 +29,11 @@ for article in reversed(articles):
         print story_text
         ps_match = re.search("preliminary results from\: ([0-9\/]*)", story_text).group(1)
         
-        name_matches = re.findall(".* \[A-Z\-].*?[votes0-9\,] ", story_text)
+        name_matches = re.findall(".*\([A-Z\-]*\).*[votes0-9\,]*", story_text)
+        print name_matches
     else:
-        print nm
         continue
-    dat[nm] = [nm, name_matches, ps_match]
+    dat[nm] = [name[0]] + name_matches + [ps_match]
 
 with open("dawn_unofficial.csv",'wb') as of:
     wr = csv.writer(of)
