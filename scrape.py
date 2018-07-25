@@ -39,16 +39,3 @@ with open("dawn_unofficial.csv",'wb') as of:
     wr = csv.writer(of)
     for key in sorted(dat):
         wr.writerow(dat[key])
-    
-#stories = main.find_all("div", {"class":re.compile("story__content")})
-#for story in stories:
-#    if story['
-
-#print([story.string for story in stories])
-"""
-dat = {}
-for story in reversed(stories[5:7]):
-    print story
-    print story.find_all("p", text = True)
-"""
-
