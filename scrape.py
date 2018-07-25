@@ -29,7 +29,7 @@ for article in reversed(articles):
         print story_text
         ps_match = re.search("preliminary results from\: ([0-9\/]*)", story_text).group(1)
         
-        name_matches = re.findall(".*\([A-Za-z\-]*\).*[votes0-9\,]*", story_text)
+        name_matches = re.findall(".*\([A-Za-z\- ]*\).*[votes0-9\,]*", story_text)
         print name_matches
     else:
         continue
