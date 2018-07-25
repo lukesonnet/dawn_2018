@@ -24,13 +24,9 @@ for article in reversed(articles):
     story = article.parent.find_next("div").find_next("div")
     story_text = '\n'.join([t.text for t in story.find_all("p")])
     if len(re.findall("Unofficial\, preliminary results", story_text)):
-        print nm
-        print "here"
-        print story_text
         ps_match = re.search("preliminary results from\: ([0-9\/]*)", story_text).group(1)
         
         name_matches = re.findall(".*\([A-Za-z\- ]*\).*[votes0-9\,]*", story_text)
-        print name_matches
     else:
         continue
     dat[nm] = [name[0]] + name_matches + [ps_match]
