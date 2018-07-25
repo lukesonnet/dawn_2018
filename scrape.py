@@ -33,5 +33,6 @@ for article in reversed(articles):
 
 with open("dawn_unofficial.csv",'wb') as of:
     wr = csv.writer(of)
+    wr.writerow(['constituency', 'cand1', 'cand2', 'N polling stations'])
     for key in sorted(dat):
         wr.writerow(dat[key])
